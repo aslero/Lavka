@@ -1,0 +1,93 @@
+<?php
+session_start(); 
+setlocale(LC_ALL, "ru_RU.CP1251");
+?>
+
+<!DOCTYPE html>
+<html>
+
+   <head>
+     <title>CSS позиционирование</title>
+     <link href="css/styles.css" rel="stylesheet">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+   </head>
+
+<body>
+<?php 
+ 
+if (isset($_GET['page'])) {$page=$_GET['page'];}
+?>
+
+<?php 
+include_once("../base/db.php");
+
+?>
+
+<div class="block">
+     <div class="header col-12">
+		<div class="header header_service pading">
+			<ul class="list_service">
+				<li class="list_item">Форум</li>
+				<li class="list_item">Помощь</li>
+			</ul>
+			<div class="header_service_menu_right">
+				Войти/Регистрация
+			</div>
+			
+		</div>
+		
+		<div class="header_logo pading">
+			<div class="logo">
+				<img src="images/logo.png">
+			</div>
+			<div class="item_add">
+			<button  id="item_add" class="btn btn-default">Подать объявление</button>
+			</div>
+		</div>
+		
+		<div class="header_search_enter pading ">
+			<div class="header_search col-12">
+				<form class="form-inline ">
+					<div class="form-group col-12">
+						<select id="category" class="form-control search_height_width_select">
+						<option>Выберите категорию</option>
+						<option>Недвижимость</option>
+						<option>Авто, мото, запчасти</option>
+						</select>
+						<input type="text" id="text_search" class="form-control " placeholder="Введите текст для поиска">
+						<select id="search_location" class="form-control search_height_width_select">
+						<option>Выберите город</option>
+						<option>По всей Беларуси</option>
+						<option>Минская область</option>
+						</select>
+						<input type="submit" id="seach_submit" class="form-control btn btn-default " value="Найти">
+						
+					</div>
+				</form>
+			</div>
+		</div>
+	 </div>
+	<div class="row">
+	 <div class="left_block_menu col-3 ">
+			<?php 
+				switch ($page) {
+					case 'country' : include "country.php";break;
+				}; 
+			?>
+
+
+	 </div>
+	  <div class="container col-9">
+	 sdfgsdfgdsfsfsfsfsfsfg
+	 </div>
+	 </div>
+</div>
+
+</body>
+
+ </html>
+ 
+
